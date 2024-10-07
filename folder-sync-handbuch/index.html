@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../img/favicon.ico" rel="shortcut icon"/>
-<title>Benutzerhandbuch: Folder Sync mit S3 Browser - ELIM Documentation</title>
+<title>Folder Sync mit S3 Browser - Vertama: The Manuals</title>
 <link href="../css/theme.css" rel="stylesheet"/>
 <link href="../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Benutzerhandbuch: Folder Sync mit S3 Browser";
+        var mkdocs_page_name = "Folder Sync mit S3 Browser";
         var mkdocs_page_input_path = "folder-sync-handbuch.md";
         var mkdocs_page_url = null;
       </script>
@@ -27,7 +27,7 @@
 <nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
 <div class="wy-side-scroll">
 <div class="wy-side-nav-search">
-<a class="icon icon-home" href=".."> ELIM Documentation
+<a class="icon icon-home" href=".."> Vertama: The Manuals
         </a>
 </div>
 <div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
@@ -35,8 +35,53 @@
 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
 </li>
 </ul>
+<p class="caption"><span class="caption-text">Artikel</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal current" href="#">Folder Sync mit S3 Browser</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#inhaltsverzeichnis">Inhaltsverzeichnis</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#1-einleitung">1. Einleitung</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#2-s3-browser-einrichten">2. S3 Browser einrichten</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#21-s3-browser-herunterladen-und-installieren">2.1 S3 Browser herunterladen und installieren</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#22-account-hinzufugen">2.2 Account hinzufügen</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#23-externen-bucket-hinzufugen">2.3 Externen Bucket hinzufügen</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#3-automatischen-sync-konfigurieren">3. Automatischen Sync konfigurieren</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#31-aufgabenplaner-offnen">3.1 Aufgabenplaner öffnen</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#32-neue-aufgabe-erstellen">3.2 Neue Aufgabe erstellen</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#33-allgemeine-einstellungen">3.3 Allgemeine Einstellungen</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#34-trigger-konfigurieren">3.4 Trigger konfigurieren</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#35-aktion-definieren">3.5 Aktion definieren</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#36-bedingungen-festlegen">3.6 Bedingungen festlegen</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#37-einstellungen-anpassen">3.7 Einstellungen anpassen</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#4-glossar">4. Glossar</a>
+</li>
+</ul>
+</li>
+</ul>
 <ul>
 <li class="toctree-l1"><a class="" href="../about.md">About</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../download/">PDF Download</a>
 </li>
 </ul>
 </div>
@@ -45,13 +90,14 @@
 <section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
 <nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
 <i class="fa fa-bars" data-toggle="wy-nav-top"></i>
-<a href="..">ELIM Documentation</a>
+<a href="..">Vertama: The Manuals</a>
 </nav>
 <div class="wy-nav-content">
 <div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
 <ul class="wy-breadcrumbs">
 <li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
-<li class="breadcrumb-item active">Benutzerhandbuch: Folder Sync mit S3 Browser</li>
+<li class="breadcrumb-item">Artikel</li>
+<li class="breadcrumb-item active">Folder Sync mit S3 Browser</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -65,12 +111,12 @@
 <li><a href="#1-einleitung">1. Einleitung</a></li>
 <li><a href="#2-s3-browser-einrichten">2. S3 Browser einrichten</a><ul>
 <li><a href="#21-s3-browser-herunterladen-und-installieren">2.1 S3 Browser herunterladen und installieren</a></li>
-<li><a href="#22-account-hinzufügen">2.2 Account hinzufügen</a></li>
-<li><a href="#23-externen-bucket-hinzufügen">2.3 Externen Bucket hinzufügen</a></li>
+<li><a href="#22-account-hinzufugen">2.2 Account hinzufügen</a></li>
+<li><a href="#23-externen-bucket-hinzufugen">2.3 Externen Bucket hinzufügen</a></li>
 </ul>
 </li>
 <li><a href="#3-automatischen-sync-konfigurieren">3. Automatischen Sync konfigurieren</a><ul>
-<li><a href="#31-aufgabenplaner-öffnen">3.1 Aufgabenplaner öffnen</a></li>
+<li><a href="#31-aufgabenplaner-offnen">3.1 Aufgabenplaner öffnen</a></li>
 <li><a href="#32-neue-aufgabe-erstellen">3.2 Neue Aufgabe erstellen</a></li>
 <li><a href="#33-allgemeine-einstellungen">3.3 Allgemeine Einstellungen</a></li>
 <li><a href="#34-trigger-konfigurieren">3.4 Trigger konfigurieren</a></li>
@@ -184,6 +230,10 @@
 </ul>
 </div>
 </div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href=".." title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../download/" title="PDF Download">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
 <hr/>
 <div role="contentinfo">
 <!-- Copyright etc -->
@@ -197,6 +247,8 @@
 </div>
 <div aria-label="Versions" class="rst-versions" role="note">
 <span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href=".." style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../download/" style="color: #fcfcfc">Next »</a></span>
 </span>
 </div>
 <script src="../js/jquery-3.6.0.min.js"></script>
