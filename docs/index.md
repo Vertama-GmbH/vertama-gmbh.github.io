@@ -4,20 +4,22 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 ## Intro
 
-Diese Seite wird automatisch aus den vorhanden Unterlagen puliziert. Dieser
-Prozess ist noch im Aufbau und die somit verfügbare Dokumentation so leider
-auch noch weder vollständig noch einheitlich. Das bitten wir uns nachzusehen,
-und wir arbeiten kontinuierlich daran dies zu verbessern. Unsere Priorität ist
-notwendige Dokumentation zum Betrieb, zur Integration und Entwicklung
-schnellsmöglich verfügbar zur machen, auch wenn dabei die Form erstmal
-zurückstehen muss.  
+Diese Seite wird automatisch aus den vorhanden Unterlagen publiziert. Dieser
+Prozess ist noch im Aufbau und die bisher verfügbare Dokumentation leider nicht
+einheitlich, und leider noch nicht vollständig. Wir bitten uns dies
+nachzusehen, und arbeiten kontinuierlich an der Verbesserung. Unsere Priorität
+ist notwendige Dokumentation zum Betrieb, zur Integration und Entwicklung
+schnellsmöglich verfügbar zur machen. Daber muss die Form manchmal noch
+zurückstehen.
 
-Für den Anfang, werden wir die bereits vorhandene Dokumentation in Form
-einzelner Artikel als List anbieten. Ziel ist es diese Liste dann zu
-durchgängigen Betriebshandbüchern zu entwickeln. 
+Zu Beginn stellen wir die bereits vorhandene Dokumentationen in Form einzelner
+Artikel hier bereit. Mit der Zeit werden werden wir die einzelnen Beiträge zu
+durchgängigen Handbüchern und Texten zusammenfügen.
 
 ## Artikel
  
  - [Benutzerhandbuch: Folder Sync mit S3 Browser](folder-sync-handbuch.md)
+ - [DIGG Integration](digg-integration.md)
+ - [DUBA Integration](duba-integration.md)
 
 ## FAQ

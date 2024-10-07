@@ -45,5 +45,7 @@ nav:
   - Home: index.md
   - Artikel: 
       - Folder Sync mit S3 Browser: folder-sync-handbuch.md
+      - digg-integration.md
+      - duba-integration.md
   - About: about.md
   - PDF Download: download.md
