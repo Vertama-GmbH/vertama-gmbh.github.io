@@ -1,4 +1,4 @@
-site_name: ELIM Documentation
+site_name: "Vertama: The Manuals"
 # site_url: https://vertama-gmbh.github.io/
 theme: readthedocs
 plugins:
@@ -44,3 +44,4 @@ plugins:
 nav:
   - Home: index.md
   - About: about.md
+  - PDF Download: download.md
