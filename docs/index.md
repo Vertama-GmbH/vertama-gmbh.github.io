@@ -2,16 +2,22 @@
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
-## Commands
+## Intro
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Diese Seite wird automatisch aus den vorhanden Unterlagen puliziert. Dieser
+Prozess ist noch im Aufbau und die somit verfügbare Dokumentation so leider
+auch noch weder vollständig noch einheitlich. Das bitten wir uns nachzusehen,
+und wir arbeiten kontinuierlich daran dies zu verbessern. Unsere Priorität ist
+notwendige Dokumentation zum Betrieb, zur Integration und Entwicklung
+schnellsmöglich verfügbar zur machen, auch wenn dabei die Form erstmal
+zurückstehen muss.  
 
-## Project layout
+Für den Anfang, werden wir die bereits vorhandene Dokumentation in Form
+einzelner Artikel als List anbieten. Ziel ist es diese Liste dann zu
+durchgängigen Betriebshandbüchern zu entwickeln. 
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Artikel
+ 
+ - [Benutzerhandbuch: Folder Sync mit S3 Browser](folder-sync-handbuch.md)
+
+## FAQ

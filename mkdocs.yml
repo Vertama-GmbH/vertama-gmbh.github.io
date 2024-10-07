@@ -5,13 +5,13 @@ plugins:
   #  - pdf-export: 
   #    compbined: true
   - with-pdf:
-      author: Vertama GmbH
-      #copyright: ANY TEXT
+      author: Vertama
+      copyright: Copyright &copy; 2024, Vertama GmbH. All Rights Reserved.
       #
       #cover: false
       #back_cover: true
       #cover_title: TITLE TEXT
-      #cover_subtitle: SUBTITLE TEXT
+      cover_subtitle: Technische Dokumentation und Handbücher zu den Vertama Diensten
       #custom_template_path: TEMPLATES PATH
       #
       #toc_title: TOC TITLE TEXT
@@ -43,5 +43,7 @@ plugins:
       #verbose: true
 nav:
   - Home: index.md
+  - Artikel: 
+      - Folder Sync mit S3 Browser: folder-sync-handbuch.md
   - About: about.md
   - PDF Download: download.md
