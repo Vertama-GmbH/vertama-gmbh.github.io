@@ -10,6 +10,8 @@
 <link href="../css/theme.css" rel="stylesheet"/>
 <link href="../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../css/extra.css" rel="stylesheet"/>
+<link href="../css/pdf-print.css" rel="stylesheet"/>
 <script>
         // Current page data
         var mkdocs_page_name = "Folder Sync mit S3 Browser";
@@ -20,6 +22,7 @@
       <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
 <script>hljs.highlightAll();</script>
 <link href="../pdf/document.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
 <body class="wy-body-for-nav" role="document">
@@ -80,12 +83,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../duba-integration/">DUBA Integration</a>
 </li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="" href="../about.md">About</a>
-</li>
-</ul>
+<p class="caption"><span class="caption-text">misc</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../download/">PDF Download</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
 </li>
 </ul>
 </div>
@@ -199,12 +201,19 @@
 <ol>
 <li>Wechseln Sie zum Reiter "Aktionen" und wählen Sie "Neu..." aus.</li>
 <li>Wählen Sie "Programm starten" aus dem Dropdown-Menü aus.</li>
-<li>Geben Sie im Feld "Programm/Skript" den vollständigen Pfad zum S3 Browser CLI ein:
-   <code>"C:\Program Files\S3 Browser\s3browser-cli.exe"</code></li>
-<li>Fügen Sie im Feld "Argumente hinzufügen" folgenden Befehl ein:
-   <code>/file sync vertama-data-transfer-dev20240830135304492700000001 "C:\Ihr\Lokaler\Ordner" "s3:vertama-data-transfer-dev20240830135304492700000001/New Folder/" ncdhs</code>
-   Ersetzen Sie "C:\Ihr\Lokaler\Ordner" mit dem tatsächlichen Pfad des zu synchronisierenden Ordners.</li>
+<li>Geben Sie im Feld "Programm/Skript" den vollständigen Pfad zum S3 Browser CLI ein:</li>
 </ol>
+<pre><code>"C:\Program Files\S3 Browser\s3browser-cli.exe"
+</code></pre>
+<ol>
+<li>Fügen Sie im Feld "Argumente hinzufügen" folgenden Befehl ein:</li>
+</ol>
+<pre><code>/file sync vertama-data-transfer-dev20240830135304492700000001 \
+    "C:\Ihr\Lokaler\Ordner" \
+    "s3:vertama-data-transfer-dev20240830135304492700000001/New Folder/" \
+    ncdhs
+</code></pre>
+<p>Ersetzen Sie "C:\Ihr\Lokaler\Ordner" mit dem tatsächlichen Pfad des zu synchronisierenden Ordners.</p>
 <p><img alt="Aktionen-Fenster mit ausgefüllten Feldern" src="../img/folder-sync/Aufgabenplaner_Aktion.png"/></p>
 <h3 id="36-bedingungen-festlegen">3.6 Bedingungen festlegen</h3>
 <p>Wechseln Sie zum Reiter "Bedingungen" und deaktivieren Sie alle Optionen unter "Energie", um den Sync auch im Batteriebetrieb zu ermöglichen.</p>
