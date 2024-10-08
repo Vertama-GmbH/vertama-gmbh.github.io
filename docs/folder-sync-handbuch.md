@@ -101,13 +101,16 @@ Im Aufgabenplaner, wählen Sie in der linken oberen Ecke unter "Aktionen" die Op
 1. Wechseln Sie zum Reiter "Aktionen" und wählen Sie "Neu..." aus.
 2. Wählen Sie "Programm starten" aus dem Dropdown-Menü aus.
 3. Geben Sie im Feld "Programm/Skript" den vollständigen Pfad zum S3 Browser CLI ein:
-   ```
-   "C:\Program Files\S3 Browser\s3browser-cli.exe"
-   ```
+```
+"C:\Program Files\S3 Browser\s3browser-cli.exe"
+```
 4. Fügen Sie im Feld "Argumente hinzufügen" folgenden Befehl ein:
-   ```
-   /file sync vertama-data-transfer-dev20240830135304492700000001 "C:\Ihr\Lokaler\Ordner" "s3:vertama-data-transfer-dev20240830135304492700000001/New Folder/" ncdhs
-   ```
+```
+/file sync vertama-data-transfer-dev20240830135304492700000001 \
+    "C:\Ihr\Lokaler\Ordner" \
+    "s3:vertama-data-transfer-dev20240830135304492700000001/New Folder/" \
+    ncdhs
+```
    Ersetzen Sie "C:\Ihr\Lokaler\Ordner" mit dem tatsächlichen Pfad des zu synchronisierenden Ordners.
 
 ![Aktionen-Fenster mit ausgefüllten Feldern](img/folder-sync/Aufgabenplaner_Aktion.png)

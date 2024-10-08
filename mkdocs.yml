@@ -1,6 +1,18 @@
 site_name: "Vertama: The Manuals"
 # site_url: https://vertama-gmbh.github.io/
-theme: readthedocs
+#
+theme:                     
+  name: 'readthedocs'      
+  highlightjs: true        
+  hljs_languages:          
+      - yaml               
+  locale: en               
+  titles_only: false       
+  collapse_navigation: true
+extra_css:
+  - css/extra.css
+  - css/pdf-print.css
+
 plugins:
   #  - pdf-export: 
   #    compbined: true
@@ -43,9 +55,10 @@ plugins:
       #verbose: true
 nav:
   - Home: index.md
-  - Artikel: 
-      - Folder Sync mit S3 Browser: folder-sync-handbuch.md
-      - digg-integration.md
-      - duba-integration.md
-  - About: about.md
-  - PDF Download: download.md
+  - Artikel:
+    - Folder Sync mit S3 Browser: folder-sync-handbuch.md
+    - digg-integration.md
+    - duba-integration.md
+  - misc:
+    - PDF Download: download.md
+    - About: about.md
