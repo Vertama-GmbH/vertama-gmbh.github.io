@@ -6,7 +6,7 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../img/favicon.ico" rel="shortcut icon"/>
-<title>DIGG Integration - Vertama: The Manuals</title>
+<title>DIGG: Geburtsmeldungen für Krankenhäuser - Vertama: The Manuals</title>
 <link href="../css/theme.css" rel="stylesheet"/>
 <link href="../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
@@ -14,7 +14,7 @@
 <link href="../css/pdf-print.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "DIGG Integration";
+        var mkdocs_page_name = "DIGG: Geburtsmeldungen f\u00fcr Krankenh\u00e4user";
         var mkdocs_page_input_path = "digg-integration.md";
         var mkdocs_page_url = null;
       </script>
@@ -42,19 +42,25 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../folder-sync-handbuch/">Folder Sync mit S3 Browser</a>
 </li>
-<li class="toctree-l1 current"><a class="reference internal current" href="#">DIGG Integration</a>
+<li class="toctree-l1 current"><a class="reference internal current" href="#">DIGG: Geburtsmeldungen für Krankenhäuser</a>
 <ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="#1-memento-string-erhalten">1) Memento String erhalten</a>
+<li class="toctree-l2"><a class="reference internal" href="#ablauf-des-meldeprozesses">Ablauf des Meldeprozesses</a>
 <ul>
-<li class="toctree-l3"><a class="reference internal" href="#endpunkt">Endpunkt</a>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="#datenstruktur">Datenstruktur</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#beispiel">Beispiel</a>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#2-formular-offnen">2) Formular öffnen</a>
+<li class="toctree-l2"><a class="reference internal" href="#api-integration-zur-vorbefullung-aus-dem-kis">API Integration zur Vorbefüllung aus dem KIS</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#1-memento-string-erhalten">1) Memento String erhalten</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#beispiel">Beispiel</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#endpunkt">Endpunkt</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#2-formularaufruf-aus-dem-kis">2) Formularaufruf aus dem KIS</a>
 <ul>
 <li class="toctree-l3"><a class="reference internal" href="#1-vorausgefullt-mit-memento-string">1. Vorausgefüllt mit Memento String</a>
 </li>
@@ -87,7 +93,7 @@
 <ul class="wy-breadcrumbs">
 <li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
 <li class="breadcrumb-item">Artikel</li>
-<li class="breadcrumb-item active">DIGG Integration</li>
+<li class="breadcrumb-item active">DIGG: Geburtsmeldungen für Krankenhäuser</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -95,25 +101,16 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="digg-integration">DIGG Integration</h1>
-<p>Diese Anleitung erklärt, wie Sie die Vertama DIGG API verwenden können um DIGG mit ihrem KIS zu integrieren. Die API bietet dabei die Möglichkeit mit Daten aus dem KIS System URLs/Links zu den Eingabeformularen zu generieren, die dann entsprechend mit allen Daten aus dem KIS System vorausgefüllt sind um somit die notwendigen manuellen Eingaben zu minimieren. Die generierten URLs sind cryptographisch gesichert und erlauben keinen Zugriff auf die Daten ausserhalb der DIGG Integration. Ein Eintrag solcher URLs in Logfiles oder sonstigen Protokollen oder Browsercaches ist somit unkritisch. Die eigentliche API Nutzung, sowie der Formular Zugriff durch HTTPS und TLS absichert. </p>
-<p>Die Bespielhafte Nutzung der API ist technologieneutral mittels <code>curl</code> demostriert. Für notwendigen Accounts für einen Test- oder Produktivbetrieb wenden sie sich bitte direkt an Ihren Ansprechpartner bei Vertama. </p>
-<p><em><code>TODO: overview of the complete flow here. KIS -- api --&gt; DIGG --&gt; KIS --&gt; BROWSER --&gt; DIGG --&gt; RKI --&gt; (BROWSER | KIS)</code></em></p>
-<h2 id="1-memento-string-erhalten">1) Memento String erhalten</h2>
-<p>Vertama DIGG Formulare können im Webbrowser vorausgefüllt aufgerufen werden. Diese Daten werden vom Vertama Server aus einem <code>Memento</code> ermittelt welcher der Formular URL in form the <code>m</code> Parameters mitgegeben werden kann. Das Memento ist verschluesselt und kann nur vom Vertama Server ausgelesen werden. Der Vertama Server speichert keine Daten, die Daten werden ausschlieslich im Memento gespeichert (client-side).</p>
-<h3 id="endpunkt">Endpunkt</h3>
-<p>Um einen Memento String zu erhalten, werden die Daten im JSON Format an folgenden Endpunkt
-gesendet: https://elim.dev.vertamob.com/api/v3/memento/params</p>
-<p>Die Authentifizierung erfolgt durch <code>Basic Auth</code>.</p>
-<p>Als Response gibt die API ein JSON Objekt zurück in folgender Form:</p>
-<pre><code class="language-json">{
-  "m": "MementoString"
-}
-</code></pre>
-<p>Sie benötigen den value vom "m" key. Das ist Ihr Memento String. </p>
+<h1 id="digg-geburtsmeldungen-fur-krankenhauser">DIGG: Geburtsmeldungen für Krankenhäuser</h1>
+<p>Mit DIGG erfassen Sie notwendige Daten zur Geburtsanzeige und können diese
+automatisiert und sicher an das Standesamt übermitteln.</p>
+<p>Der Aufwand für den zuständigen Mitarbeiter wird dabei durch Vorbefüllung der bekannten Information aus der KIS Integration möglichst sowie der automatischen digitalen Übermittlung ans Standesamt minimiert. Bei Vollständiger Verfügbarkeit aller Daten durch das KIS ist auch ein komplett automatisierte Meldung möglich, ohne das weitere Mitarbeiter Interaktion zwingend erforderlich ist. </p>
+<h2 id="ablauf-des-meldeprozesses">Ablauf des Meldeprozesses</h2>
+<p>to be written</p>
+<p>todo: insert form and page flow diagrams here</p>
 <h3 id="datenstruktur">Datenstruktur</h3>
-<p>Hier sehen Sie einen kompletten Datensatz. Wenn Sie möchten, dass alle Eingabefelder vorausgefüllt sind, muss ein 
-JSON Datensatz gesendet werden, der diese Daten enthält.</p>
+<p>Hier sehen Sie beispielhaft einen Datensatz der Geburtsvoranzeige. Mit allen oder auch nur Teilen dieser Daten aus dem KIS können die Formulare vorausgefüllt werden. </p>
+<p><strong>JSON</strong> </p>
 <pre><code class="language-json">{
   "kind": {
     "name": {
@@ -150,8 +147,39 @@ JSON Datensatz gesendet werden, der diese Daten enthält.</p>
   }
 }
 </code></pre>
+<p><strong>application/x-www-form-urlencoded</strong></p>
+<pre><code class="language-http">POST {{ host }}/api/v3/memento/route/geburtsbescheinigung
+Authorization: Basic {{username}} {{password}}
+Content-Type: application/x-www-form-urlencoded
+X-CSRF-TOKEN: {{csrfToken}}
+
+mutter.name.vorname=Edan  &amp;
+mutter.geburtsdatum=1976-04-14  &amp;
+mutter.familienstand=VERHEIRATET  &amp;
+mutter.name.nachname=Richmond  &amp;
+mutter.geschlecht=MAENNLICH  &amp;
+mutter.adresse.strasse=Rocky Hague Drive 43c  &amp;
+mutter.adresse.postleitzahl=83059  &amp;
+mutter.adresse.stadt=Consectetur molliti  &amp;
+mutter.kontakt.telefon=Ea molestiae beatae  &amp;
+mutter.kontakt.email=lyhinodoga@example.com  &amp;
+kind.name.vorname=Lane  &amp;
+kind.geburtsdatum=1984-06-12  &amp;
+kind.geschlecht=DIVERS  &amp;
+kind.geburtsstunde=04:04  &amp;
+kind.geburtsort.strasse=White New Drive 41b  &amp;
+kind.geburtsort.ortsteil=Tempelhof &amp;
+kind.geburtsort.stadt=Laufbach &amp;
+kind.geburtsort.kreisbezeichnung=Beilingen
+</code></pre>
+<h2 id="api-integration-zur-vorbefullung-aus-dem-kis">API Integration zur Vorbefüllung aus dem KIS</h2>
+<p>Diese Anleitung erklärt, wie Sie die Vertama DIGG API verwenden können um DIGG mit ihrem KIS zu integrieren. Die API bietet dabei die Möglichkeit mit Daten aus dem KIS System URLs/Links zu den Eingabeformularen zu generieren, die dann entsprechend mit allen Daten aus dem KIS System vorausgefüllt sind um somit die notwendigen manuellen Eingaben zu minimieren. Die generierten URLs sind cryptographisch gesichert und erlauben keinen Zugriff auf die Daten ausserhalb der DIGG Integration. Ein Eintrag solcher URLs in Logfiles oder sonstigen Protokollen oder Browsercaches ist somit unkritisch. Die eigentliche API Nutzung, sowie der Formular Zugriff durch HTTPS und TLS absichert. </p>
+<p>Die Bespielhafte Nutzung der API ist technologieneutral mittels <code>curl</code> demostriert. Für notwendigen Accounts für einen Test- oder Produktivbetrieb wenden sie sich bitte direkt an Ihren Ansprechpartner bei Vertama. </p>
+<p><em><code>TODO: overview of the complete flow here. KIS -- api --&gt; DIGG --&gt; KIS --&gt; BROWSER --&gt; DIGG --&gt; RKI --&gt; (BROWSER | KIS)</code></em></p>
+<h2 id="1-memento-string-erhalten">1) Memento String erhalten</h2>
+<p>Vertama DIGG Formulare können im Webbrowser vorausgefüllt aufgerufen werden. Diese Daten werden vom Vertama Server aus einem <code>Memento</code> ermittelt welcher der Formular URL in form the <code>m</code> Parameters mitgegeben werden kann. Das Memento ist verschluesselt und kann nur vom Vertama Server ausgelesen werden. Der Vertama Server speichert keine Daten, die Daten werden ausschlieslich im Memento gespeichert (client-side).</p>
 <h3 id="beispiel">Beispiel</h3>
-<p>Um das ganze nun zu veranschaulichen, hier beispielhaft eine Memento Anfrage mit <code>curl</code>: </p>
+<p>Zur Veranschaulichung, hier beispielhaft eine Memento Anfrage mit <code>curl</code>: </p>
 <pre><code class="language-bash">curl -X POST "https://elim.dev.vertamob.com/api/v3/memento/params" \
      -u "{username}:{password}" \
      -H "Content-Type: application/json" \
@@ -191,7 +219,17 @@ JSON Datensatz gesendet werden, der diese Daten enthält.</p>
     }
 }'
 </code></pre>
-<h2 id="2-formular-offnen">2) Formular öffnen</h2>
+<h3 id="endpunkt">Endpunkt</h3>
+<p>Um einen Memento String zu erhalten, werden die Daten im JSON Format an folgenden Endpunkt
+gesendet: https://elim.dev.vertamob.com/api/v3/memento/params</p>
+<p>Die Authentifizierung erfolgt durch <code>Basic Auth</code>.</p>
+<p>Als Response gibt die API ein JSON Objekt in folgender Form zurück:</p>
+<pre><code class="language-json">{
+  "m": "MementoString"
+}
+</code></pre>
+<p>Sie benötigen den value vom "m" key. Das ist Ihr Memento String. </p>
+<h2 id="2-formularaufruf-aus-dem-kis">2) Formularaufruf aus dem KIS</h2>
 <p>Das DIGG Formular befindet sich unter <code>https://elim.dev.vertamob.com/digg/Geburtsbescheinigung</code> und kann direkt im Brower aufgerufen werden. Die Authentifizierung durch <code>Basic Auth</code>. Für vorausgefüllte Formulare kann der URL der optionala Memento Parameter <code>m</code> angehängt werden.</p>
 <h3 id="1-vorausgefullt-mit-memento-string">1. Vorausgefüllt mit Memento String</h3>
 <p>Haben Sie zuvor den Memento String aus Schritt 1 erhalten, können Sie diesen Nutzen, damit das Formular vorausgefüllt
